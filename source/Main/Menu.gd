@@ -15,7 +15,7 @@ func _ready():
 		button.connect("mouse_entered", self, "mouse_hover_button", [button.name, true])
 		button.connect("mouse_exited", self, "mouse_hover_button", [button.name, false])
 
-func anim_finished(anim_name):
+func anim_finished(_anim_name):
 	if command == "Exit":
 		get_tree().quit()
 
