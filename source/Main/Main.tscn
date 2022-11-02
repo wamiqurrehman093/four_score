@@ -236,5 +236,3 @@ anims/RESET = SubResource( 9 )
 anims/toggle = SubResource( 10 )
 
 [node name="Tween" type="Tween" parent="Menu"]
-
-[connection signal="animation_finished" from="Menu/AnimationPlayer" to="Menu" method="_on_AnimationPlayer_animation_finished"]
