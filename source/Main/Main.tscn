@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/fonts/squada_one/SquadaOneRegular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/fonts/milky_honey/MilkyHoney.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://source/Main/Main.gd" type="Script" id=3]
+[ext_resource path="res://source/Main/Menu.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=4]
 size = 72
@@ -38,18 +40,148 @@ Button/styles/hover = SubResource( 7 )
 Button/styles/normal = SubResource( 3 )
 Button/styles/pressed = SubResource( 8 )
 
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Heading:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 32, 92 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Buttons/Create:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Buttons/Edit:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 104 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Buttons/Import:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 208 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Buttons/Exit:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 312 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "toggle"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Heading:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -400, 92 ), Vector2( 32, 92 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Buttons/Create:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -440, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Buttons/Edit:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -440, 104 ), Vector2( 0, 104 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Buttons/Import:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -440, 208 ), Vector2( 0, 208 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Buttons/Exit:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -440, 312 ), Vector2( 0, 312 ) ]
+}
+
 [node name="Main" type="Node2D"]
+script = ExtResource( 3 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Menu" type="CanvasLayer" parent="."]
+script = ExtResource( 4 )
 
-[node name="Background" type="ColorRect" parent="CanvasLayer"]
+[node name="Background" type="ColorRect" parent="Menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Heading" type="Label" parent="CanvasLayer"]
+[node name="Heading" type="Label" parent="Menu"]
 margin_left = 32.0
 margin_top = 92.0
 margin_right = 432.0
@@ -61,7 +193,7 @@ text = "Four Score"
 align = 1
 valign = 1
 
-[node name="Buttons" type="VBoxContainer" parent="CanvasLayer"]
+[node name="Buttons" type="VBoxContainer" parent="Menu"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 32.0
@@ -72,29 +204,37 @@ rect_min_size = Vector2( 400, 400 )
 theme = SubResource( 2 )
 custom_constants/separation = 24
 
-[node name="1" type="Button" parent="CanvasLayer/Buttons"]
+[node name="Create" type="Button" parent="Menu/Buttons"]
 margin_right = 400.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 400, 80 )
 text = "Create Character"
 
-[node name="2" type="Button" parent="CanvasLayer/Buttons"]
+[node name="Edit" type="Button" parent="Menu/Buttons"]
 margin_top = 104.0
 margin_right = 400.0
 margin_bottom = 184.0
 rect_min_size = Vector2( 400, 80 )
 text = "Edit Character"
 
-[node name="3" type="Button" parent="CanvasLayer/Buttons"]
+[node name="Import" type="Button" parent="Menu/Buttons"]
 margin_top = 208.0
 margin_right = 400.0
 margin_bottom = 288.0
 rect_min_size = Vector2( 400, 80 )
 text = "Import Character"
 
-[node name="4" type="Button" parent="CanvasLayer/Buttons"]
+[node name="Exit" type="Button" parent="Menu/Buttons"]
 margin_top = 312.0
 margin_right = 400.0
 margin_bottom = 392.0
 rect_min_size = Vector2( 400, 80 )
 text = "Exit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Menu"]
+anims/RESET = SubResource( 9 )
+anims/toggle = SubResource( 10 )
+
+[node name="Tween" type="Tween" parent="Menu"]
+
+[connection signal="animation_finished" from="Menu/AnimationPlayer" to="Menu" method="_on_AnimationPlayer_animation_finished"]
