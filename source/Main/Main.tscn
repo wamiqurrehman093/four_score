@@ -52,7 +52,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 32, 92 ) ]
+"values": [ Vector2( -400, 92 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Buttons/Create:rect_position")
@@ -64,7 +64,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -440, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Buttons/Edit:rect_position")
@@ -76,7 +76,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 104 ) ]
+"values": [ Vector2( -440, 104 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Buttons/Import:rect_position")
@@ -88,7 +88,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 208 ) ]
+"values": [ Vector2( -440, 208 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Buttons/Exit:rect_position")
@@ -100,7 +100,31 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 312 ) ]
+"values": [ Vector2( -440, 312 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Buttons:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Heading:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -167,6 +191,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( -440, 312 ), Vector2( 0, 312 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Buttons:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.13 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Heading:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.13 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -182,9 +230,9 @@ __meta__ = {
 }
 
 [node name="Heading" type="Label" parent="Menu"]
-margin_left = 32.0
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -400.0
 margin_top = 92.0
-margin_right = 432.0
 margin_bottom = 240.0
 rect_min_size = Vector2( 400, 148 )
 custom_colors/font_color = Color( 0.823529, 0.901961, 0.54902, 1 )
@@ -194,6 +242,7 @@ align = 1
 valign = 1
 
 [node name="Buttons" type="VBoxContainer" parent="Menu"]
+modulate = Color( 1, 1, 1, 0 )
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 32.0
@@ -205,28 +254,32 @@ theme = SubResource( 2 )
 custom_constants/separation = 24
 
 [node name="Create" type="Button" parent="Menu/Buttons"]
-margin_right = 400.0
+margin_left = -440.0
+margin_right = -40.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 400, 80 )
 text = "Create Character"
 
 [node name="Edit" type="Button" parent="Menu/Buttons"]
+margin_left = -440.0
 margin_top = 104.0
-margin_right = 400.0
+margin_right = -40.0
 margin_bottom = 184.0
 rect_min_size = Vector2( 400, 80 )
 text = "Edit Character"
 
 [node name="Import" type="Button" parent="Menu/Buttons"]
+margin_left = -440.0
 margin_top = 208.0
-margin_right = 400.0
+margin_right = -40.0
 margin_bottom = 288.0
 rect_min_size = Vector2( 400, 80 )
 text = "Import Character"
 
 [node name="Exit" type="Button" parent="Menu/Buttons"]
+margin_left = -440.0
 margin_top = 312.0
-margin_right = 400.0
+margin_right = -40.0
 margin_bottom = 392.0
 rect_min_size = Vector2( 400, 80 )
 text = "Exit"

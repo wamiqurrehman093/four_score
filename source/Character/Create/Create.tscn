@@ -1,0 +1,232 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/fonts/milky_honey/MilkyHoney.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/squada_one/SquadaOneRegular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://source/Character/Create/Menu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.666667, 0.745098, 0.392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.666667, 0.745098, 0.392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.666667, 0.745098, 0.392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.666667, 0.745098, 0.392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.666667, 0.745098, 0.392157, 1 )
+
+[sub_resource type="Theme" id=2]
+Button/fonts/font = SubResource( 1 )
+Button/styles/disabled = SubResource( 5 )
+Button/styles/focus = SubResource( 6 )
+Button/styles/hover = SubResource( 7 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 72
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleBar/New:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -100 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleBar/Save:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 84, -100 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TitleBar/Title:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 168, -100 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TitleBar/Exit:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1192, -100 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TitleBar:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "toggle"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("TitleBar/New:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -100 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TitleBar/Save:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 84, -100 ), Vector2( 84, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TitleBar/Title:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 168, -100 ), Vector2( 168, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TitleBar/Exit:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1192, -100 ), Vector2( 1192, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TitleBar:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Create" type="Node2D"]
+
+[node name="Menu" type="CanvasLayer" parent="."]
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TitleBar" type="HBoxContainer" parent="Menu"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+margin_left = 4.0
+margin_top = 8.0
+margin_right = -4.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 0, 80 )
+theme = SubResource( 2 )
+
+[node name="New" type="Button" parent="Menu/TitleBar"]
+margin_top = -100.0
+margin_right = 80.0
+margin_bottom = -20.0
+rect_min_size = Vector2( 80, 80 )
+text = "N"
+
+[node name="Save" type="Button" parent="Menu/TitleBar"]
+margin_left = 84.0
+margin_top = -100.0
+margin_right = 164.0
+margin_bottom = -20.0
+rect_min_size = Vector2( 80, 80 )
+text = "S"
+
+[node name="Title" type="Label" parent="Menu/TitleBar"]
+margin_left = 168.0
+margin_top = -100.0
+margin_right = 1188.0
+margin_bottom = -21.0
+rect_min_size = Vector2( 200, 74 )
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.823529, 0.901961, 0.54902, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Create Character"
+align = 1
+valign = 1
+
+[node name="Exit" type="Button" parent="Menu/TitleBar"]
+margin_left = 1192.0
+margin_top = -100.0
+margin_right = 1272.0
+margin_bottom = -20.0
+rect_min_size = Vector2( 80, 80 )
+text = "X"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Menu"]
+anims/RESET = SubResource( 11 )
+anims/toggle = SubResource( 10 )
+
+[connection signal="pressed" from="Menu/TitleBar/Exit" to="Menu" method="_on_Exit_pressed"]

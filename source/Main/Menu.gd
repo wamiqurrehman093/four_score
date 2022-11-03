@@ -18,6 +18,8 @@ func _ready():
 func anim_finished(_anim_name):
 	if command == "Exit":
 		get_tree().quit()
+	if command == "Create":
+		get_tree().change_scene("res://source/Character/Create/Create.tscn")
 
 func button_pressed(button_name):
 	command = button_name
